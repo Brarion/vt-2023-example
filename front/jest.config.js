@@ -25,5 +25,6 @@ module.exports = {
   ],
   testMatch: [
     '**/*.test.{ts,tsx}'
-  ]
+  ],
+  modulePathIgnorePatterns: ["cypress"]
 };
