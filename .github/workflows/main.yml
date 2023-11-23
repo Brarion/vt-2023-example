@@ -15,12 +15,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Change directory front
-        run: cd ./front
-
       - name: Install deps
-        run: yarn install
+        run: cd ./front && yarn install
 
       - name: Build
-        run: yarn build
+        run: cd ./front && yarn build
     
