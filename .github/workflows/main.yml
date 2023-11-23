@@ -21,3 +21,17 @@ jobs:
       - name: Build
         run: cd ./front && yarn build
     
+  Test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install deps
+        run: cd ./front && yarn install
+
+      - name: Test
+        run: cd ./front && npx jest
+    
