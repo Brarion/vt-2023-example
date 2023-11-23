@@ -1,0 +1,53 @@
+name: front
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+#   Build:
+#     name: Build
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
+
+#       - name: Install deps
+#         run: cd ./front && yarn install
+
+#       - name: Build
+#         run: cd ./front && yarn build
+    
+#   Test:
+#     name: Test
+#     runs-on: ubuntu-latest
+#     needs: Build
+
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
+
+#       - name: Install deps
+#         run: cd ./front && yarn install
+
+#       - name: Test
+#         run: cd ./front && npx jest
+    
+  Coverage:
+    name: Coverage
+    runs-on: ubuntu-latest
+    # needs: Build
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install deps
+        run: cd ./front && yarn install
+
+      - name: Test
+        run: cd ./front && npx jest --coverage
+    
